@@ -1,0 +1,61 @@
+=============================================================
+18.03.2021
+=============================================================
+
+???
+1. Нужна ли надпись Работаем с заводами-производителями России, Белоруссии и Украины в сайдбаре на странице производители?
+2. Разные адреса в футере на макете и на сайте. Какой оставить?
+???
+
+
+utils.js
+main_re.js
+ - svg4everybody
+
+main.js
+
+common.css
+media.css
+
+Можно удалить
+logo-instagram.png
+logo-telegramm.png
+logo-instagramm.png
+logo-vk.png
+
+
+1.Добавить обертку <div class="page-content"> для <header class="page-header"> и <div class="content wrap group">:
+
+<div class="page page--main">
+    <div class="page-content">
+		<header class="page-header">
+		</header>
+		<div class="content wrap group">
+		</div>
+	</div>
+	<footer class="page-footer group">
+	</footer>
+</div>
+
+2.Добавить класс page--producers:
+<div class="page page--main page--producers">
+
+3.Добавить классы sidebar-menu-wrapper и sidebar-info-wrapper:
+<div class='sidebar-block sidebar-menu-wrapper' style=''>
+<div class="sidebar-block sidebar-info-wrapper">
+
+4. Убрать у footer класс group:
+<footer class="page-footer">
+
+Хедер:
+
+1. Исправить разметку для соцсетей
+2. Исправить блок телефон
+3. Добавить блоки Распродажа и <div class='picked'></div>
+4.<a href="/cart" class="basket"> поменять ссылку на /cart
+5.Блок <div class="basket_cont"> убрать
+
+
+Сайдбар:
+1. Добавить класс open:
+<nav class="sidebar-menu open">
