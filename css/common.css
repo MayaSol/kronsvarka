@@ -2856,24 +2856,33 @@ input.error {
     display: inline-block;
     width: 30px;
     height: 30px;
-    margin-right: 5px
+    margin-right: 5px;
+    background-color: #308ac4;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.pagination__item.active {
+    background-color: #fff;
+    color: #308ac4;
 }
 
 .pagination__item a,
 .pagination__item div,
 .pagination__item span {
-    background-color: #308ac4;
-    display: inline-block;
+    display: block;
+    width: 100%;
+    height: 100%;
     padding: 0;
     text-align: center;
-    color: #fff;
     text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 28px;
+    border: 1px solid #308ac4;
     border-radius: 3px;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    border: 1px solid transparent;
-    font-size: 16px
+    color: inherit;
+    background-color: inherit;
 }
 
 .pagination__item a {
