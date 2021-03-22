@@ -16,6 +16,16 @@ main.js
 
 common.css
 media.css
+utils.css
+
+<link rel="stylesheet" type="text/css" href="file:///home/helloworld/Work/kronsvarka/css/utils.css">
+ - перед common.css
+
+ <script src="file:///home/helloworld/Work/kronsvarka/js/utils.js"></script>
+  - в head
+
+fonts/roboto-regular.woff
+fonts/roboto-regular.woff2
 
 Можно удалить
 logo-instagram.png

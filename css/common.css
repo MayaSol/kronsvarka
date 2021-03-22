@@ -995,6 +995,11 @@ blockquote:before {
     background-image: url('file:///home/helloworld/Work/kronsvarka/img/sprite.png');
     background-repeat: no-repeat;
 }
+.icon-compare {
+  background-position: -68px -68px;
+  width: 26px;
+  height: 20px;
+}
 .icon-deliver {
   background-position: -10px -18px;
   width: 18px;
@@ -1005,12 +1010,7 @@ blockquote:before {
   width: 24px;
   height: 21px;
 }
-.icon-compare {
-  background-position: -68px -68px;
-  width: 26px;
-  height: 20px;
-}
-.icon-insta {
+.icon-isnta {
   background-position: -94px -88px;
   width: 24px;
   height: 24px;
@@ -1055,8 +1055,6 @@ blockquote:before {
   width: 24px;
   height: 24px;
 }
-
-
 
 
 
@@ -1703,9 +1701,9 @@ input[type="submit"] {
     cursor: pointer
 }
 
-input[type="checkbox"] {
+/*input[type="checkbox"] {
     display: none
-}
+}*/
 
 input[type="checkbox"]+div {
     cursor: pointer;
@@ -1870,6 +1868,10 @@ input.error {
     width: 230px;
     display: block;
     margin: 20px auto
+}
+
+.data_agreement input {
+    display: none;
 }
 
 .empty {
@@ -2818,9 +2820,17 @@ input.error {
     padding: 20px
 }
 
-.filter__btn {
+.filter__btns {
     width: 100%;
-    margin-bottom: 10px
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.filter__btn-clear {
+    font-family: "PF Agora Slab Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 700;    
 }
 
 .filter-control {
@@ -2830,6 +2840,7 @@ input.error {
 .filter-control *:last-child {
     margin-bottom: 0
 }
+
 
 .range {
     padding-bottom: 50px
@@ -4039,6 +4050,14 @@ input.error {
     font-style: normal;
     font-weight: 900;
     src: url("../fonts/hs-PFAgoraSlabPro-Black.woff2") format("woff2"), url("../fonts/hs-PFAgoraSlabPro-Black.woff") format("woff")
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    src: url("file:///home/helloworld/Work/kronsvarka/fonts/roboto-regular.woff") format("woff2"), 
+    url("file:///home/helloworld/Work/kronsvarka/fonts/roboto-regular.woff2") format("woff")
 }
 
 @keyframes effect {
@@ -6025,4 +6044,212 @@ input.field-text__input {
 
 .page-footer .social-net {
     margin-top: 18px;
+}
+
+/*Фильтр*/
+
+.filter {
+    padding: 25px 0 20px;
+}
+
+.filter__group {
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #eee;
+}
+
+.filter__group:last-child {
+    margin-bottom: 0;
+}
+
+.filter__group-title {
+    margin-bottom: 10px;
+    font-family: "PF Agora Slab Pro";
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.filter__items {
+    padding-left: 8px;
+    list-style: none;
+}
+
+.filter__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 1.2;
+    color: rgba(4, 6, 59, 0.8);
+}
+
+.filter__item label {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+
+.filter__num {
+    color: rgba(154, 155, 167, 0.8);
+    font-size: 12px;
+}
+
+
+/*Поле checkbox*/
+
+.field-checkbox__input-wrap {
+
+}
+
+.field-checkbox__name {
+  display: inline-block;
+  position: relative;
+  padding-left: 26px;
+  margin-right: .6em;
+  font-weight: 400;
+  line-height: 1.5
+}
+
+.field-checkbox__name-text {
+  display: inline-block;
+}
+
+input:disabled~.field-checkbox__name-text {
+  cursor: not-allowed
+}
+
+.field-checkbox__name-text:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #9a9ba7;
+  border-radius: 3px;
+}
+
+input:focus~.field-checkbox__name-text:before {
+  outline: 0;
+  box-shadow: 0 0 0 1px rgba(154, 155, 167, 0.6);
+}
+
+input:disabled~.field-checkbox__name-text:before {
+  border-color: #999;
+  background: #ccc
+}
+
+.field-checkbox__name-text:after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  width: 10px;
+  height: 7px;
+  opacity: 0;
+  background-image: url('file:///home/helloworld/Work/kronsvarka/img/check-white.png');
+/*  border-left: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  border-radius: 2px;
+  transform: rotate(-45deg);
+*/  transition: opacity .3s;
+/*  box-shadow: 1px 2px 0 #fff, inset 0 -2px 0 #fff
+*/}
+
+input:checked~.field-checkbox__name-text:after {
+  opacity: 1
+}
+
+input:checked~.field-checkbox__name-text:before {
+    background-color: #ffca00;
+    border-color: #ffca00;
+}
+
+input:checked:disabled~.field-checkbox__name-text:after {
+  border-color: #999
+}
+
+.field-checkbox__input {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  transform: translateY(-50%);
+  opacity: 0
+}
+
+.field-checkbox__input:focus,
+.field-checkbox__input:active {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(2, 117, 217, .7)
+}
+
+/**/
+
+.filter__range-input input.field-text__input {
+    font-size: 15px;
+    color: #04063b;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.filter__range-inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.filter__range-input {
+    position: relative;
+    width: 105px;
+    border: solid 1px #e5e5e9;
+}
+
+.filter__range-input::after {
+    content: 'р.';
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    color: #9a9ba7;
+    transform: translateY(-50%);
+}
+
+.filter__range.noUi-target {
+    border: none;
+    background-color: #e5e5e9;
+    box-shadow: none;
+}
+
+.filter__range.noUi-horizontal {
+    height: 2px;
+}
+
+.filter__range .noUi-connect {
+    background-color: #ff9800;
+}
+
+.filter__range .noUi-handle {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.filter__range .noUi-handle::before,
+.filter__range .noUi-handle::after {
+    display: none;
+}
+
+.filter__range.noUi-horizontal .noUi-handle {
+    top: -1px;
+    background-image: url('file:///home/helloworld/Work/kronsvarka/img/slider.png');
+    background-position: top center;
+    background-repeat: no-repeat;
+    cursor: pointer;
 }

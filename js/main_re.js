@@ -13,6 +13,7 @@ $(".info").click(function (e) {
     }
   });
 });
+
 $(document).ready(function () {
   svg4everybody();
   $('.slider-for').slick({
@@ -169,6 +170,20 @@ $(document).ready(function () {
       var $this = $(this);
       alert('Невозможно оформить, корзина пуста');
     });
+  }
+
+  initRanges();
+
+  var clearBtns = document.querySelectorAll('.filter__btn-clear');
+  console.log(clearBtns);
+  for (i=0; i<clearBtns.length; i++) {
+    console.log(i);
+    clearBtns[i].addEventListener('click', function(event) {
+      event.preventDefault();
+      var parentFilter = event.target.closest('.filter');
+      clearFilter(parentFilter);
+      initRanges(parentFilter);
+    })
   }
 
 });
@@ -342,5 +357,123 @@ function append_filters() {
   }else {
     $('#filter_form').find('.display_filter').appendTo('#filtr_form_mobile');
     $('#filter_form').find('#mse2_filters').appendTo('#filtr_form_mobile');
+  }
+}
+
+
+/*Фильтр*/
+const selectorRange = '.filter__range';
+const selectorWrapper = '.filter__range-wrapper';
+const selectorFrom = '.filter__range-input--from .field-text__input';
+const selectorTo = '.filter__range-input--to .field-text__input';
+const selectorInitFrom = '.filter__range-init-from';
+const selectorInitTo = '.filter__range-init-to';
+const step = 100;
+
+
+function getInitRangeValues(rangeElement) {
+  console.log('getInitRangeValues');
+    var parent = rangeElement.closest(selectorWrapper);
+    console.log('parent');
+    console.log(parent);
+    var initFrom = parent.querySelector(selectorInitFrom);
+    var initTo = parent.querySelector(selectorInitTo);
+
+    var valueFrom = parseInt(initFrom.value.replace(/[^0-9.,]/g, ""));
+    var valueTo = parseInt(initTo.value.replace(/[^0-9.,]/g, ""));
+    console.log('input values:');
+    console.log(initFrom.value);
+    console.log(initTo.value);
+    console.log(valueFrom);
+    console.log(valueTo);
+
+    return [valueFrom, valueTo];
+}
+
+function initRanges(filterElement) {
+
+
+var filterElement = filterElement ? filterElement : document;
+console.log('filterElement');
+console.log(filterElement);
+
+ var filterRanges = filterElement.querySelectorAll(selectorRange);
+ console.log('filterRanges');
+ console.log(filterRanges);
+
+  for (let i=0; i < filterRanges.length; i++) {
+
+    var parent = filterRanges[i].closest(selectorWrapper);
+    // console.log(parent);
+    // var initFrom = parent.querySelector(selectorInitFrom);
+    // var initTo = parent.querySelector(selectorInitTo);
+
+    // var valueFrom = initFrom.value.replace(/[^0-9.,]/g, "");
+    // var valueTo = initTo.value.replace(/[^0-9.,]/g, "");
+    // console.log('input values:');
+    // console.log(initFrom.value);
+    // console.log(initTo.value);
+    // console.log(valueFrom);
+    // console.log(valueTo);
+
+    var initValues = getInitRangeValues(filterRanges[i]);
+
+    var valueFrom = initValues[0];
+    var valueTo = initValues[1];
+
+    noUiSlider.create(filterRanges[i], {
+        start: [
+          valueFrom,
+          valueTo
+        ],
+        connect: [false,true,false],
+        step: step,
+        range: {
+            'min': valueFrom,
+            'max': valueTo
+        },
+    });
+
+    //inputs
+    var inputFrom = parent.querySelector(selectorFrom);
+    var inputTo = parent.querySelector(selectorTo);
+    filterRanges[i].noUiSlider.on('update', function (values, handle) {
+
+      // var sliderVal = Math.round(values[handle]);
+      var sliderVal = this.get();
+      console.log('sliderVal');
+      console.log(sliderVal);
+      inputFrom.value = Math.round(sliderVal[0]).toLocaleString('ru-RU');
+      inputTo.value = Math.round(sliderVal[1]).toLocaleString('ru-RU');
+    });
+ }
+
+}
+
+function clearFilter(filterElement) {
+  const selectorInitFrom = '.filter__range-init-from';
+  const selectorInitTo = '.filter__range-init-to';
+  const selectorWrapper = '.filter__range-wrapper';
+
+  var checkboxes = filterElement.querySelectorAll('input[type="checkbox"');
+
+  for (i=0; i<checkboxes.length; i++) {
+    checkboxes[i].checked=false;
+  }
+
+  var ranges = filterElement.querySelectorAll('.noUi-target');
+
+  for (i=0; i<ranges.length; i++) {
+    var initValues = getInitRangeValues(ranges[i]);
+
+    // var valueFrom = initValues[0];
+    // var valueTo = initValues[1];
+    // var parent = ranges[i].closest(selectorWrapper);
+    // var initFrom = parent.querySelector(selectorInitFrom);
+    // var initTo = parent.querySelector(selectorInitTo);
+    // var valueFrom = initFrom.value.replace(/[^0-9.,]/g, "");
+    // var valueTo = initTo.value.replace(/[^0-9.,]/g, "");
+
+    ranges[i].noUiSlider.set([initValues[0],initValues[1]]);
   }
 }
