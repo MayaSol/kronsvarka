@@ -129,7 +129,7 @@
     .bottom_header .picked {
       display: none;
     }
-    .bottom_header .link {
+    .bottom_header .btn-sale {
       display: none;
     }
     .yellow_filter select {
@@ -303,6 +303,10 @@
         margin-bottom: 15px;
     }
 
+    .catalog-btns {
+        display: none;
+    }
+
 }
 
 @media all and (max-width: 767px) {
@@ -430,7 +434,7 @@
         width: 300px;
     }
 
-    .page-footer__cred .logo {
+    .page-footer__bottom .logo {
         float: initial;
         display: table;
         margin: 0 auto;

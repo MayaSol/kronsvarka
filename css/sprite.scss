@@ -1,0 +1,95 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$check: (56px, 46px, -56px, -46px, 16px, 13px, 374px, 343px, 'file:///home/helloworld/Work/kronsvarka/img/sprite.png', 'check', );
+$compare-black: (40px, 34px, -40px, -34px, 16px, 12px, 374px, 343px, 'file:///home/helloworld/Work/kronsvarka/img/sprite.png', 'compare-black', );
+$compare-grey: (25px, 22px, -25px, -22px, 15px, 12px, 374px, 343px, 'file:///home/helloworld/Work/kronsvarka/img/sprite.png', 'compare-grey', );
+$compare: (180px, 154px, -180px, -154px, 26px, 20px, 374px, 343px, 'file:///home/helloworld/Work/kronsvarka/img/sprite.png', 'compare', );
+$deliver-hover: (72px, 59px, -72px, -59px, 18px, 13px, 374px, 343px, 'file:///home/helloworld/Work/kronsvarka/img/sprite.png', 'deliver-hover', );
+$deliver: (90px, 72px, -90px, -72px, 18px, 13px, 374px, 343px, 'file:///home/helloworld/Work/kronsvarka/img/sprite.png', 'deliver', );
+$fav-black: (0px, 0px, 0px, 0px, 12px, 10px, 374px, 343px, 'file:///home/helloworld/Work/kronsvarka/img/sprite.png', 'fav-black', );
+$fav-grey: (12px, 10px, -12px, -10px, 13px, 12px, 374px, 343px, 'file:///home/helloworld/Work/kronsvarka/img/sprite.png', 'fav-grey', );
+$fav: (156px, 133px, -156px, -133px, 24px, 21px, 374px, 343px, 'file:///home/helloworld/Work/kronsvarka/img/sprite.png', 'fav', );
+$insta: (206px, 174px, -206px, -174px, 24px, 24px, 374px, 343px, 'file:///home/helloworld/Work/kronsvarka/img/sprite.png', 'insta', );
+$instock: (108px, 85px, -108px, -85px, 16px, 16px, 374px, 343px, 'file:///home/helloworld/Work/kronsvarka/img/sprite.png', 'instock', );
+$order: (124px, 101px, -124px, -101px, 16px, 16px, 374px, 343px, 'file:///home/helloworld/Work/kronsvarka/img/sprite.png', 'order', );
+$out: (140px, 117px, -140px, -117px, 16px, 16px, 374px, 343px, 'file:///home/helloworld/Work/kronsvarka/img/sprite.png', 'out', );
+$sales: (350px, 318px, -350px, -318px, 24px, 25px, 374px, 343px, 'file:///home/helloworld/Work/kronsvarka/img/sprite.png', 'sales', );
+$tg: (230px, 198px, -230px, -198px, 24px, 24px, 374px, 343px, 'file:///home/helloworld/Work/kronsvarka/img/sprite.png', 'tg', );
+$viber: (254px, 222px, -254px, -222px, 24px, 24px, 374px, 343px, 'file:///home/helloworld/Work/kronsvarka/img/sprite.png', 'viber', );
+$vk: (278px, 246px, -278px, -246px, 24px, 24px, 374px, 343px, 'file:///home/helloworld/Work/kronsvarka/img/sprite.png', 'vk', );
+$whatsapp: (302px, 270px, -302px, -270px, 24px, 24px, 374px, 343px, 'file:///home/helloworld/Work/kronsvarka/img/sprite.png', 'whatsapp', );
+$yt: (326px, 294px, -326px, -294px, 24px, 24px, 374px, 343px, 'file:///home/helloworld/Work/kronsvarka/img/sprite.png', 'yt', );
+$spritesheet-sprites: ($check, $compare-black, $compare-grey, $compare, $deliver-hover, $deliver, $fav-black, $fav-grey, $fav, $insta, $instock, $order, $out, $sales, $tg, $viber, $vk, $whatsapp, $yt, );
+$spritesheet: (374px, 343px, 'file:///home/helloworld/Work/kronsvarka/img/sprite.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

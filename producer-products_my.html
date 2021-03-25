@@ -12,6 +12,7 @@
     <meta name='robots' content='index,follow'>
     <!-- inject:css -->
     <link rel="stylesheet" type="text/css" href="assets/template/css/vendors/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="file:///home/helloworld/Work/kronsvarka/css/utils.css">
     <link rel="stylesheet" type="text/css" href="file:///home/helloworld/Work/kronsvarka/css/common.css">
     <link rel="stylesheet" type="text/css" href="file:///home/helloworld/Work/kronsvarka/css/media.css">
     <link rel="stylesheet" media="print" type="text/css" href="assets/template/css/common_print.css">
@@ -57,7 +58,7 @@
   </div>
 </div>
 <![endif]-->
-    <div class="page page--main page--producers">
+    <div class="page page--main page--producer-catalog">
         <div class="page-inner">
             <div class="page-content">
                 <header class="page-header">
@@ -194,7 +195,7 @@
                     <div class="bottom_header">
                         <div class="wrap">
                             <div class="menu">Каталог товаров</div>
-                            <a href="#" class="btn-bright btn-sale">
+                            <a href="#" class="link link-bright">
                                 <i class="icon-png icon-sales"></i>
                                 <span>Распродажа!</span>
                             </a>
@@ -684,6 +685,131 @@
                             <div class="sidebar-block__title">Производители</div>
                             <p>Работаем с заводами-производителями России, Белоруссии и Украины</p>
                         </div>
+                        <div class="filter">
+                            <form class="filter__form">
+                                <div class="filter__group filter__group--subcat">
+                                    <div class="filter__group-title">Подкатегории</div>
+                                    <ul class="filter__items no-list">
+                                        <li class="filter__item">
+                                            <div class="field-checkbox__input-wrap">
+                                                <label class="field-checkbox__name">
+                                                    <input class="field-checkbox__input" type="checkbox" name="p1" checked="checked" />
+                                                    <span class="field-checkbox__name-text">Резаки типа Р1</span>
+                                                </label>
+                                            </div>
+                                            <span class="filter__num">
+                                                (<span>12</span>)
+                                            </span>
+                                        </li>
+                                        <li class="filter__item">
+                                            <div class="field-checkbox__input-wrap">
+                                                <label class="field-checkbox__name">
+                                                    <input class="field-checkbox__input" type="checkbox" name="p2" />
+                                                    <span class="field-checkbox__name-text">Резаки типа Р3</span>
+                                                </label>
+                                                <!--                                                 <div class="field-checkbox__help-text-wrap">
+                                                    <div class="field-checkbox__help-text">А, нет. Не единственный...</div>
+                                                </div> -->
+                                            </div>
+                                            <span class="filter__num">
+                                                (<span>23</span>)
+                                            </span>
+                                        </li>
+                                        <li class="filter__item">
+                                            <div class="field-checkbox__input-wrap">
+                                                <label class="field-checkbox__name">
+                                                    <input class="field-checkbox__input" type="checkbox" name="p3" />
+                                                    <span class="field-checkbox__name-text">Резаки удлиненные</span>
+                                                </label>
+                                            </div>
+                                            <span class="filter__num">
+                                                (<span>2</span>)
+                                            </span>
+                                        </li>
+                                        <li class="filter__item">
+                                            <div class="field-checkbox__input-wrap">
+                                                <label class="field-checkbox__name">
+                                                    <input class="field-checkbox__input" type="checkbox" name="p4" />
+                                                    <span class="field-checkbox__name-text">Резаки металлургические</span>
+                                                </label>
+                                            </div>
+                                            <span class="filter__num">
+                                                (<span>42</span>)
+                                            </span>
+                                        </li>
+                                        <li class="filter__item">
+                                            <div class="field-checkbox__input-wrap">
+                                                <label class="field-checkbox__name">
+                                                    <input class="field-checkbox__input" type="checkbox" name="p5" />
+                                                    <span class="field-checkbox__name-text">Керосинорезы и бензорезы</span>
+                                                </label>
+                                            </div>
+                                            <span class="filter__num">
+                                                (<span>56</span>)
+                                            </span>
+                                        </li>
+                                        <li class="filter__item">
+                                            <div class="field-checkbox__input-wrap">
+                                                <label class="field-checkbox__name">
+                                                    <input class="field-checkbox__input" type="checkbox" name="p6" />
+                                                    <span class="field-checkbox__name-text">Резаки машинные</span>
+                                                </label>
+                                            </div>
+                                            <span class="filter__num">
+                                                (<span>21</span>)
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="filter__group filter__group--others">
+                                    <div class="filter__group-title">Прочее</div>
+                                    <li class="filter__item">
+                                        <div class="field-checkbox__input-wrap">
+                                            <label class="field-checkbox__name">
+                                                <input class="field-checkbox__input" type="checkbox" name="p5" />
+                                                <span class="field-checkbox__name-text">Резаки типа Р1</span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="filter__item">
+                                        <div class="field-checkbox__input-wrap">
+                                            <label class="field-checkbox__name">
+                                                <input class="field-checkbox__input" type="checkbox" name="p6" />
+                                                <span class="field-checkbox__name-text">Резаки типа Р2</span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="filter__group filter__group--others">
+                                    <div class="filter__group-title">Стоимость</div>
+                                    <div class="filter__range-wrapper">
+                                        <div class="filter__range-inputs">
+                                            <input class="filter__range-init-from" value="200" hidden>
+                                            <input class="filter__range-init-to" value="140000" hidden />
+                                            <div class="filter__range-input filter__range-input--from">
+                                                <label class="field-text  field-text--range-from">
+                                                    <span class="field-text__input-wrap">
+                                                        <input id="min_price" class="field-text__input" type="text" value="200" name="min_price" />
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <span>-</span>
+                                            <div class="filter__range-input filter__range-input--to">
+                                                <label class="field-text  field-text--range-to">
+                                                    <span class="field-text__input-wrap">
+                                                        <input id="max_price" class="field-text__input" type="text" value="1400000" name="max_price" />
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="filter__range"></div>
+                                    </div>
+                                </div>
+                                <div class="filter__btns">
+                                    <button class="filter__btn-clear btn btn-3">Сбросить фильтр</button>
+                                </div>
+                            </form>
+                        </div>
                         <div class="price-list">
                             <div class="price-list__title">Наш прайс-лист</div>
                             <a href="assets/files/" class="price-list__btn btn-5 btn-xs" download>Скачать</a>
@@ -691,203 +817,185 @@
                     </div>
                     <div class="main-content">
                         <div class="breadcrumbs">
-                            <a href="/">Кронсварка</a>
+                            <a href="/">Кронсварка</a><svg class="icon icon-arrow">
+                                <use xmlns:xlink="https://www.w3.org/1999/xlink" xlink:href="proizvoditeli/donmet#icon-arrow"></use>
+                            </svg><a href="proizvoditeli">Производители</a>
                         </div>
-                        <h1>Производители</h1>
-                        <p>Работаем с заводами-производителями России, Белоруссии и Украины</p>
-                        <div class="catalog-content catalog-producer">
-                            <a href="proizvoditeli/bamz" class="producer-card">
-                                <div class="producer-box">
-                                    <div class="producer-logo">
-                                        <img src="/assets/files/logo/l1.png" alt="">
+                        <h1>БАМЗ</h1>
+                        <div id="pdopage">
+                            <div id="rows" class="catalog group rows">
+                                <div class="catalog-item">
+                                    <div class="catalog-item__img"><a href="product/reduktor-atsetilenovyi-bao-5-4"><img src="/assets/cache_image/assets/files/goods/БАО-5-4 БАМЗ_140x140_beb.jpg" alt=""></a></div>
+                                    <a href="catalog/reduktory-aczetilenovye" class="catalog-item__cat">Редукторы ацетиленовые</a>
+                                    <a href="product/reduktor-atsetilenovyi-bao-5-4" class="catalog-item__good">Редуктор ацетиленовый БАО-5-4</a>
+                                    <div class="group">
+                                        <div class="catalog-item__price">1 955 р.</div>
+                                        <a href="#order" class="catalog-item__btn fol btn-1 btn-sm  order-link" onclick="cartAdd(206); return false;" data-good='Редуктор ацетиленовый БАО-5-4'>Купить</a>
                                     </div>
                                 </div>
-                                <div class="producer-name">
-                                    <span>БАМЗ</span>
-                                </div>
-                            </a>
-                            <a href="proizvoditeli/donmet" class="producer-card">
-                                <div class="producer-box">
-                                    <div class="producer-logo">
-                                        <img src="/assets/files/logo/l2.png" alt="">
+                                <div class="catalog-item">
+                                    <div class="catalog-item__img"><a href="product/reduktor-atsetilenovyy-bao-5-mg"><img src="/assets/cache_image/assets/files/goods/bao5mgbamz_140x140_beb.jpg" alt=""></a></div>
+                                    <a href="catalog/reduktory-aczetilenovye" class="catalog-item__cat">Редукторы ацетиленовые</a>
+                                    <a href="product/reduktor-atsetilenovyy-bao-5-mg" class="catalog-item__good">Редуктор ацетиленовый БАО-5 МГ</a>
+                                    <div class="group">
+                                        <div class="catalog-item__price">1 844 р.</div>
+                                        <a href="#order" class="catalog-item__btn fol btn-1 btn-sm  order-link" onclick="cartAdd(207); return false;" data-good='Редуктор ацетиленовый БАО-5 МГ'>Купить</a>
                                     </div>
                                 </div>
-                                <div class="producer-name">
-                                    <span>ДОНМЕТ</span>
-                                </div>
-                            </a>
-                            <a href="proizvoditeli/bamz" class="producer-card">
-                                <div class="producer-box">
-                                    <div class="producer-logo">
-                                        <img src="/assets/files/logo/l3.png" alt="">
+                                <div class="catalog-item">
+                                    <div class="catalog-item__img"><a href="product/reduktor-kislorodnyi-bko-50-4"><img src="/assets/cache_image/assets/files/goods/bkobamz_140x140_beb.jpg" alt=""></a></div>
+                                    <a href="catalog/reduktory-kislorodnye" class="catalog-item__cat">Редукторы кислородные</a>
+                                    <a href="product/reduktor-kislorodnyi-bko-50-4" class="catalog-item__good">Редуктор кислородный БКО 50-4 БАМЗ</a>
+                                    <div class="group">
+                                        <div class="catalog-item__price">2 118 р.</div>
+                                        <a href="#order" class="catalog-item__btn fol btn-1 btn-sm  order-link" onclick="cartAdd(211); return false;" data-good='Редуктор кислородный БКО 50-4 БАМЗ'>Купить</a>
                                     </div>
                                 </div>
-                                <div class="producer-name">
-                                    <span>START</span>
-                                </div>
-                            </a>
-                            <a href="proizvoditeli/donmet" class="producer-card">
-                                <div class="producer-box">
-                                    <div class="producer-logo">
-                                        <img src="/assets/files/logo/l4.png" alt="">
+                                <div class="catalog-item">
+                                    <div class="catalog-item__img"><a href="product/reduktor-kislorodnyi-bko-50-mg"><img src="/assets/cache_image/assets/files/goods/bko5mgbamz_140x140_beb.jpg" alt=""></a></div>
+                                    <a href="catalog/reduktory-kislorodnye" class="catalog-item__cat">Редукторы кислородные</a>
+                                    <a href="product/reduktor-kislorodnyi-bko-50-mg" class="catalog-item__good">Редуктор кислородный БКО-50 МГ БАМЗ</a>
+                                    <div class="group">
+                                        <div class="catalog-item__price">1 883 р.</div>
+                                        <a href="#order" class="catalog-item__btn fol btn-1 btn-sm  order-link" onclick="cartAdd(212); return false;" data-good='Редуктор кислородный БКО-50 МГ БАМЗ'>Купить</a>
                                     </div>
                                 </div>
-                                <div class="producer-name">
-                                    <span>ПО «Джет»</span>
-                                </div>
-                            </a>
-                            <a href="proizvoditeli/bamz" class="producer-card">
-                                <div class="producer-box">
-                                    <div class="producer-logo">
-                                        <img src="/assets/files/logo/l5.png" alt="">
+                                <div class="catalog-item">
+                                    <div class="catalog-item__img"><a href="product/reduktor-propanovyi-bpo-5-4"><img src="/assets/cache_image/assets/files/goods/bpobamz_140x140_beb.jpg" alt=""></a></div>
+                                    <a href="catalog/reduktory-propanovye" class="catalog-item__cat">Редукторы пропановые</a>
+                                    <a href="product/reduktor-propanovyi-bpo-5-4" class="catalog-item__good">Редуктор пропановый БПО 5-4 БАМЗ</a>
+                                    <div class="group">
+                                        <div class="catalog-item__price">1 678 р.</div>
+                                        <a href="#order" class="catalog-item__btn fol btn-1 btn-sm  order-link" onclick="cartAdd(217); return false;" data-good='Редуктор пропановый БПО 5-4 БАМЗ'>Купить</a>
                                     </div>
                                 </div>
-                                <div class="producer-name">
-                                    <span>РОАР</span>
-                                </div>
-                            </a>
-                            <a href="proizvoditeli/donmet" class="producer-card">
-                                <div class="producer-box">
-                                    <div class="producer-logo">
-                                        <img src="/assets/files/logo/paton.png" alt="">
+                                <div class="catalog-item">
+                                    <div class="catalog-item__img"><a href="product/reduktor-propanovyi-bpo-5-mg"><img src="/assets/cache_image/assets/files/goods/bpo5mgbamz_140x140_beb.jpg" alt=""></a></div>
+                                    <a href="catalog/reduktory-propanovye" class="catalog-item__cat">Редукторы пропановые</a>
+                                    <a href="product/reduktor-propanovyi-bpo-5-mg" class="catalog-item__good">Редуктор пропановый БПО-5 МГ БАМЗ</a>
+                                    <div class="group">
+                                        <div class="catalog-item__price">1 547 р.</div>
+                                        <a href="#order" class="catalog-item__btn fol btn-1 btn-sm  order-link" onclick="cartAdd(218); return false;" data-good='Редуктор пропановый БПО-5 МГ БАМЗ'>Купить</a>
                                     </div>
                                 </div>
-                                <div class="producer-name">
-                                    <span>ПАТОН</span>
-                                </div>
-                            </a>
-                            <a href="proizvoditeli/bamz" class="producer-card">
-                                <div class="producer-box">
-                                    <div class="producer-logo">
-                                        <img src="/assets/files/goods/a_logo_Rosma.png" alt="">
+                                <div class="catalog-item">
+                                    <div class="catalog-item__img"><a href="product/bvo-80-4-reduktor-vodorodnyi"><img src="/assets/cache_image/assets/files/goods/bvobamz_140x140_beb.jpg" alt=""></a></div>
+                                    <a href="catalog/reduktory-vodorodnyie" class="catalog-item__cat">Редукторы водородные</a>
+                                    <a href="product/bvo-80-4-reduktor-vodorodnyi" class="catalog-item__good">Редуктор водородный БВО-80-4 БАМЗ</a>
+                                    <div class="group">
+                                        <div class="catalog-item__price">2 330 р.</div>
+                                        <a href="#order" class="catalog-item__btn fol btn-1 btn-sm  order-link" onclick="cartAdd(224); return false;" data-good='Редуктор водородный БВО-80-4 БАМЗ'>Купить</a>
                                     </div>
                                 </div>
-                                <div class="producer-name">
-                                    <span>Росма</span>
-                                </div>
-                            </a>
-                            <a href="proizvoditeli/donmet" class="producer-card">
-                                <div class="producer-box">
-                                    <div class="producer-logo">
-                                        <img src="/assets/files/goods/REDIUS_LOGO.jpg" alt="">
+                                <div class="catalog-item">
+                                    <div class="catalog-item__img"><a href="product/bko-50-mini-he-isp-03-dlya-zapolneniya-lateksnyh-sharov"><img src="/assets/cache_image/assets/files/goods/hebamz_140x140_beb.jpg" alt=""></a></div>
+                                    <a href="catalog/reduktory-gelievye" class="catalog-item__cat">Редукторы гелиевые</a>
+                                    <a href="product/bko-50-mini-he-isp-03-dlya-zapolneniya-lateksnyh-sharov" class="catalog-item__good">Редуктор гелиевый БКО-50 мини (He) исп.03</a>
+                                    <div class="group">
+                                        <div class="catalog-item__price">2 386 р.</div>
+                                        <a href="#order" class="catalog-item__btn fol btn-1 btn-sm  order-link" onclick="cartAdd(225); return false;" data-good='Редуктор гелиевый БКО-50 мини (He) исп.03'>Купить</a>
                                     </div>
                                 </div>
-                                <div class="producer-name">
-                                    <span>redius</span>
-                                </div>
-                            </a>
-                            <a href="proizvoditeli/bamz" class="producer-card">
-                                <div class="producer-box">
-                                    <div class="producer-logo">
-                                        <img src="/assets/files/logo/Foxweld_logo.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="producer-name">
-                                    <span>FoxWeld</span>
-                                </div>
-                            </a>
-                            <a href="proizvoditeli/donmet" class="producer-card">
-                                <div class="producer-box">
-                                    <div class="producer-logo">
-                                        <img src="/assets/files/logo/svarog-logo.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="producer-name">
-                                    <span>Сварог</span>
-                                </div>
-                            </a>
-                            <a href="proizvoditeli/donmet" class="producer-card">
-                                <div class="producer-box">
-                                    <div class="producer-logo">
-                                        <img src="/assets/files/logo/ОСНОВНОЙ логотип ПТК (для белого фона).png" alt="">
-                                    </div>
-                                </div>
-                                <div class="producer-name">
-                                    <span>Птк</span>
-                                </div>
-                            </a>
-                            <a href="proizvoditeli/donmet" class="producer-card">
-                                <div class="producer-box">
-                                    <div class="producer-logo">
-                                        <img src="/assets/files/logo/лог ВРТ.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="producer-name">
-                                    <span>НПП ВРТ</span>
-                                </div>
-                            </a>
+                            </div>
+                            <ul class="pagination no-list">
+                                <li class="pagination__item active"><a class="pagination__link" href="#">&lt;</a></li>
+                                <li class="pagination__item active"><a class="pagination__link" href="proizvoditeli/bamz">1</a></li>
+                                <li class="pagination__item"><a class="pagination__link" href="proizvoditeli/bamz?page=2">2</a></li>
+                                <li class="pagination__item"><a class="pagination__link" href="proizvoditeli/bamz?page=3">3</a></li>
+                                <li class="pagination__item"><a class="pagination__link" href="proizvoditeli/bamz?page=4">4</a></li>
+                                <li class="pagination__item"><a class="pagination__link" href="proizvoditeli/bamz?page=5">5</a></li>
+                                <li class="pagination__item"><a class="pagination__link" href="proizvoditeli/bamz?page=2">&gt;</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        <footer class="page-footer group">
-            <!--
-  <div class="sendex group">
-    <div class="wrap">
-      <div class="sendex__title">Подпишитесь на новости и акции</div>
-
-      
-    </div>
-  </div>
-  -->
-            <div class="page-footer__top">
-                <div class="wrap">
-                    <div class="group group--m3">
-                        <div class="col-3">
-                            <div class="footer-menu-title">Популярное оборудование</div>
-                            <nav class="footer-menu">
-                                <a href="catalog/svarochnye-poluavtomaty">Сварочные полуавтоматы</a><a href="catalog/svarochnye-invertory">Сварочные инверторы</a><a href="catalog/gorelki-svarochnye">Горелки для газовой сварки</a><a href="catalog/reduktory-gazovye">Редукторы газовые</a> </nav>
-                        </div>
-                        <div class="col-3">
-                            <div class="footer-menu-title">Клиентам</div>
-                            <nav class="footer-menu">
-                                <a href="o-nas">О компании</a><a href="kontakty">Контакты</a><a href="poleznoe/vopros-otvet">Вопрос-ответ</a><a href="poleznoe/stati">Статьи</a> </nav>
-                        </div>
-                        <div class="col-3">
-                            <address>
-                                г. Санкт-Петербург<br>
-                                Шкиперский проток,<br>
-                                дом 14, литер З, корпус 19, помещение 349 </address>
-                            <a href="kontakty" class="map-link">Показать на карте</a>
-                            <div class="social-net">
-                                <a href="https://vk.com/club166798068" target="_blank">
-                                    <i class="icon-png icon-insta"></i>
-                                    <span>Инстаграмм</span>
-                                </a>
-                                <a href="https://vk.com/club166798068" target="_blank">
-                                    <i class="icon-png icon-vk"></i>
-                                    <span>Вотсап</span>
-                                </a>
-                                <a href="https://www.youtube.com/c/ОООКронсварка" target="_blank">
-                                    <i class="icon-png icon-yt"></i>
-                                    <span>Ютуб</span>
-                                </a>
+            <footer class="page-footer">
+                <div class="page-footer__form">
+                    <div class="wrap subscribe">
+                        <div class="subscribe__title">Подпишитесь на новости и акции</div>
+                        <form class="subscribe__form">
+                            <label class="field-text field-text--subscribe-email field-text--dark">
+                                <span class="field-text__name"></span>
+                                <span class="field-text__input-wrap">
+                                    <input class="field-text__input" type="text" placeholder="Ваш E-mail" name="subscribe-email" />
+                                </span>
+                            </label>
+                            <button class="btn btn-4">Подписаться</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="page-footer__main">
+                    <div class="page-footer__main-inner wrap">
+                        <div class="page-footer__main-left">
+                            <div class="page-footer__main-nav">
+                                <div class="page-footer__main-nav-col">
+                                    <div class="footer-menu-title">Кронсварка</div>
+                                    <nav class="footer-menu">
+                                        <a href="catalog/svarochnye-poluavtomaty">Каталог</a>
+                                        <a href="catalog/svarochnye-invertory">Доставка и оплата</a>
+                                        <a href="catalog/gorelki-svarochnye">Акции</a>
+                                        <a href="catalog/reduktory-gazovye">Новости</a>
+                                        <a href="#">Контакты</a>
+                                    </nav>
+                                </div>
+                                <div class="page-footer__main-nav-col">
+                                    <div class="footer-menu-title">Сервис</div>
+                                    <nav class="footer-menu">
+                                        <a href="o-nas">Сертификаты
+                                        </a><a href="kontakty">О нас</a><a href="poleznoe/vopros-otvet">Гарантия</a><a href="poleznoe/stati">Вопрос-ответ</a> </nav>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-3">
-                            <div class="contacts">
-                                <div class="contacts__item">
-                                    <div class="contacts__label">Режим работы:</div>
-                                    <div class="contacts__value">пн-пт: 9:00-17:00</div>
+                        <div class="page-footer__main-right">
+                            <div class="page-footer__main-info">
+                                <div class="page-footer__main-info-col">
+                                    <address>
+                                        г. Санкт-Петербург<br>
+                                        Шкиперский проток,<br>
+                                        дом 14, литер З, корпус 19,<br>
+                                        помещение 349
+                                    </address>
+                                    <a href="kontakty" class="map-link">Показать на карте</a>
+                                    <div class="social-net">
+                                        <a href="https://vk.com/club166798068" target="_blank">
+                                            <i class="icon-png icon-insta"></i>
+                                            <span>Инстаграмм</span>
+                                        </a>
+                                        <a href="https://vk.com/club166798068" target="_blank">
+                                            <i class="icon-png icon-vk"></i>
+                                            <span>Вотсап</span>
+                                        </a>
+                                        <a href="https://www.youtube.com/c/ОООКронсварка" target="_blank">
+                                            <i class="icon-png icon-yt"></i>
+                                            <span>Ютуб</span>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="contacts__item">
-                                    <div class="contacts__label">Телефон:</div>
-                                    <div class="contacts__value"><a href="tel:+78126423252" onclick="yaCounter45505878.reachGoal('phone-click'); return true;">+7 (812) 642-32-52</a></div>
-                                </div>
-                                <div class="contacts__item">
-                                    <div class="contacts__label">Напишите нам:</div>
-                                    <div class="contacts__value"><a href="mailto:contact@kronsvarka.ru" onclick="yaCounter45505878.reachGoal('email-click'); return true;">contact@kronsvarka.ru</a></div>
+                                <div class="page-footer__main-info-col">
+                                    <div class="contacts">
+                                        <div class="contacts__item">
+                                            <div class="contacts__label">Режим работы:</div>
+                                            <div class="contacts__value">пн-пт: 9:00-17:00</div>
+                                        </div>
+                                        <div class="contacts__item">
+                                            <div class="contacts__label">Телефон:</div>
+                                            <div class="contacts__value"><a href="tel:+78126423252" onclick="yaCounter45505878.reachGoal('phone-click'); return true;">+7 (812) 642-32-52</a></div>
+                                        </div>
+                                        <div class="contacts__item">
+                                            <div class="contacts__label">Напишите нам:</div>
+                                            <div class="contacts__value"><a href="mailto:contact@kronsvarka.ru" onclick="yaCounter45505878.reachGoal('email-click'); return true;">contact@kronsvarka.ru</a></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="page-footer__bottom">
-                <div class="wrap">
-                    <div class="group">
+                <div class="page-footer__cred">
+                    <div class="wrap">
                         <div class="logo">
-                            <img src="/assets/template/images/logo-2.png" alt="">
+                            <img src="assets/template/images/logo-2.png" alt="">
                             <div class="copy">© 2017-2021 ООО «Кронсварка»</div>
                         </div>
                         <div class="offer">
@@ -898,8 +1006,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </footer>
         </div>
         <!--  -->
         <!-- Yandex.Metrika counter -->
@@ -1107,7 +1214,7 @@
     </script> -->
     <!--  -->
     <!-- Yandex.Metrika counter -->
-    <!--     <script type="text/javascript">
+    <script type="text/javascript">
     (function(m, e, t, r, i, k, a) {
         m[i] = m[i] || function() {
             (m[i].a = m[i].a || []).push(arguments)
@@ -1118,10 +1225,10 @@
     ym(45505878, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true });
     </script> <noscript>
         <div><img src="https://mc.yandex.ru/watch/45505878" style="position:absolute; left:-9999px;" alt="" /></div>
-    </noscript>  -->
+    </noscript>
     <!-- /Yandex.Metrika counter -->
     <!-- BEGIN JIVOSITE CODE {literal} -->
-    <!--     <script type='text/javascript'>
+    <script type='text/javascript'>
     (function() {
         var widget_id = 'oN2ApYZZzB';
         var d = document;
@@ -1137,7 +1244,7 @@
         }
         if (d.readyState == 'complete') { l(); } else { if (w.attachEvent) { w.attachEvent('onload', l); } else { w.addEventListener('load', l, false); } }
     })();
-    </script> -->
+    </script>
     <!-- END JIVOSITE CODE {/literal} -->
     <!--  -->
     <!--     <script type="text/javascript" src="/assets/components/msearch2/js/web/default.js"></script>

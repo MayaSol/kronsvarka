@@ -16,7 +16,6 @@ $(".info").click(function (e) {
 
 $(document).ready(function () {
   svg4everybody();
-  objectFitImages();
   $('.slider-for').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -29,8 +28,7 @@ $(document).ready(function () {
     slidesToScroll: 1,
     asNavFor: '.slider-for',
     dots: false,
-    arrows: true,
-    infinite: true,
+    infinite: false,
     centerMode: false,
     focusOnSelect: true
   });
@@ -54,27 +52,23 @@ $(document).ready(function () {
   //     }
   //   });
   // });
-  // if (!$('body').hasClass('index')) {
-  //   $('.sidebar-menu').slideUp(0);
-  // }
-  // $('.sidebar-menu').slideUp(0);
-  if ($('.sidebar-menu').hasClass('open')) {
-    $('.sidebar-menu').slideDown(300);
+  if (!$('body').hasClass('index')) {
+    $('.sidebar-menu').slideUp(0);
   }
   if ($('.wrap').width() != 300) {
     $('.menu').click(function (e) {
       e.preventDefault();
       e.stopPropagation();
       if ($('.sidebar-menu').hasClass('open')) {
-        $('.sidebar-menu').slideUp(300);
         $('.sidebar-menu').removeClass("open");
+        $('.sidebar-menu').slideUp(300);
       } else {
-        $('.sidebar-menu').slideDown(300);
         $('.sidebar-menu').addClass("open");
+        $('.sidebar-menu').slideDown(300);
       }
     });
   } else {
-    // $('.sidebar').slideUp(300);
+    $('.sidebar').slideUp(300);
     $('.menu').click(function (e) {
       e.preventDefault();
       e.stopPropagation();
@@ -87,18 +81,18 @@ $(document).ready(function () {
       }
     });
   }
-  // $('.share > p').click(function (e) {
-  //   e.preventDefault();
-  //   e.stopPropagation();
-  //   $('.share_block').toggleClass("open");
-  //   $(document).click(function (e) {
-  //     e.preventDefault();
-  //     e.stopPropagation();
-  //     if (!$(".share_block").find(e.target).length) {
-  //       $(".share_block").removeClass("open");
-  //     }
-  //   });
-  // });
+  $('.share > p').click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $('.share_block').toggleClass("open");
+    $(document).click(function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (!$(".share_block").find(e.target).length) {
+        $(".share_block").removeClass("open");
+      }
+    });
+  });
   $('.zakaz > p').click(function (e) {
     e.preventDefault();
     // e.stopPropagation();
@@ -178,57 +172,22 @@ $(document).ready(function () {
     });
   }
 
-  var filterSelects = document.querySelectorAll('.sort-select select');
+  initRanges();
 
-  choices = [];
-  for (i=0; i<filterSelects.length; i++) {
-    choices[i] = new Choices(filterSelects[i],{
-      searchEnabled: false,
-      shouldSort: false
-    });
+  var clearBtns = document.querySelectorAll('.filter__btn-clear');
+  console.log(clearBtns);
+  for (i=0; i<clearBtns.length; i++) {
+    console.log(i);
+    clearBtns[i].addEventListener('click', function(event) {
+      event.preventDefault();
+      var parentFilter = event.target.closest('.filter');
+      clearFilter(parentFilter);
+      initRanges(parentFilter);
+    })
   }
 
-  var btnsGridToggle = document.querySelectorAll('.catalog-btns .btn');
-  for (var i=0; i<btnsGridToggle.length; i++) {
-    btnsGridToggle[i].addEventListener('click', function (event) {
-      var containerClass = this.dataset.container;
-      var container = document.querySelector('.' + containerClass);
-      container.dataset.grid="";
-      container.dataset.grid=this.dataset.grid;
-      var parent = this.closest('.catalog-btns');
-      var btns = parent.querySelectorAll('.btn');
-      for (var i=0; i<btns.length; i++) {
-        btns[i].classList.remove('active');
-      }
-      this.classList.add('active');
-    });
-  };
-  $( '.btn[data-grid="grid"]' ).trigger( "click" );
+});
 
-  $('[data-tab-link]').click(function(event) {
-    event.preventDefault();
-    console.log($(this).data('tabLink'));
-    var tab = $($(this).data('tabLink'));
-    console.log(tab);
-    if (tab.length > 0) {
-      tab[0].scrollIntoView();
-      tab.trigger('click');
-    }
-    // $($(this).data('tabLink'))[0].scrollIntoView();
-  })
-
-// var stretchBtns = document.querySelectorAll('[data-stretch-selector]');
-// console.log('stretchBtns');
-// console.log(stretchBtns);
-// for (var i=0; i<stretchBtns.length; i++) {
-//   stretchBtns[i].addEventListener('click',function(event) {
-//     console.log('click stretch');
-//     stretch(event.target);
-//   });
-// }
-
-
-})
 
 function cartAdd(id, qty) {
   if (typeof qty === 'undefined') {
@@ -401,18 +360,120 @@ function append_filters() {
   }
 }
 
-function stretch(elem) {
-    console.log('stretch');
-    var parent = elem.parentElement.querySelector(elem.dataset.stretchSelector);
+
+/*Фильтр*/
+const selectorRange = '.filter__range';
+const selectorWrapper = '.filter__range-wrapper';
+const selectorFrom = '.filter__range-input--from .field-text__input';
+const selectorTo = '.filter__range-input--to .field-text__input';
+const selectorInitFrom = '.filter__range-init-from';
+const selectorInitTo = '.filter__range-init-to';
+const step = 100;
+
+
+function getInitRangeValues(rangeElement) {
+  console.log('getInitRangeValues');
+    var parent = rangeElement.closest(selectorWrapper);
+    console.log('parent');
     console.log(parent);
-    if (parent.classList.contains('open')) {
-      parent.classList.remove('open');
-      parent.style.height="";
-    }
-    else {
-      parent.classList.add('open');
-      parent.style.height = "auto";
-    }
+    var initFrom = parent.querySelector(selectorInitFrom);
+    var initTo = parent.querySelector(selectorInitTo);
+
+    var valueFrom = parseInt(initFrom.value.replace(/[^0-9.,]/g, ""));
+    var valueTo = parseInt(initTo.value.replace(/[^0-9.,]/g, ""));
+    console.log('input values:');
+    console.log(initFrom.value);
+    console.log(initTo.value);
+    console.log(valueFrom);
+    console.log(valueTo);
+
+    return [valueFrom, valueTo];
 }
 
+function initRanges(filterElement) {
 
+
+var filterElement = filterElement ? filterElement : document;
+console.log('filterElement');
+console.log(filterElement);
+
+ var filterRanges = filterElement.querySelectorAll(selectorRange);
+ console.log('filterRanges');
+ console.log(filterRanges);
+
+  for (let i=0; i < filterRanges.length; i++) {
+
+    var parent = filterRanges[i].closest(selectorWrapper);
+    // console.log(parent);
+    // var initFrom = parent.querySelector(selectorInitFrom);
+    // var initTo = parent.querySelector(selectorInitTo);
+
+    // var valueFrom = initFrom.value.replace(/[^0-9.,]/g, "");
+    // var valueTo = initTo.value.replace(/[^0-9.,]/g, "");
+    // console.log('input values:');
+    // console.log(initFrom.value);
+    // console.log(initTo.value);
+    // console.log(valueFrom);
+    // console.log(valueTo);
+
+    var initValues = getInitRangeValues(filterRanges[i]);
+
+    var valueFrom = initValues[0];
+    var valueTo = initValues[1];
+
+    noUiSlider.create(filterRanges[i], {
+        start: [
+          valueFrom,
+          valueTo
+        ],
+        connect: [false,true,false],
+        step: step,
+        range: {
+            'min': valueFrom,
+            'max': valueTo
+        },
+    });
+
+    //inputs
+    var inputFrom = parent.querySelector(selectorFrom);
+    var inputTo = parent.querySelector(selectorTo);
+    filterRanges[i].noUiSlider.on('update', function (values, handle) {
+
+      // var sliderVal = Math.round(values[handle]);
+      var sliderVal = this.get();
+      console.log('sliderVal');
+      console.log(sliderVal);
+      inputFrom.value = Math.round(sliderVal[0]).toLocaleString('ru-RU');
+      inputTo.value = Math.round(sliderVal[1]).toLocaleString('ru-RU');
+    });
+ }
+
+}
+
+function clearFilter(filterElement) {
+  const selectorInitFrom = '.filter__range-init-from';
+  const selectorInitTo = '.filter__range-init-to';
+  const selectorWrapper = '.filter__range-wrapper';
+
+  var checkboxes = filterElement.querySelectorAll('input[type="checkbox"');
+
+  for (i=0; i<checkboxes.length; i++) {
+    checkboxes[i].checked=false;
+  }
+
+  var ranges = filterElement.querySelectorAll('.noUi-target');
+
+  for (i=0; i<ranges.length; i++) {
+    var initValues = getInitRangeValues(ranges[i]);
+
+    // var valueFrom = initValues[0];
+    // var valueTo = initValues[1];
+    // var parent = ranges[i].closest(selectorWrapper);
+    // var initFrom = parent.querySelector(selectorInitFrom);
+    // var initTo = parent.querySelector(selectorInitTo);
+    // var valueFrom = initFrom.value.replace(/[^0-9.,]/g, "");
+    // var valueTo = initTo.value.replace(/[^0-9.,]/g, "");
+
+    ranges[i].noUiSlider.set([initValues[0],initValues[1]]);
+  }
+}

@@ -1,0 +1,279 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$available-name: 'available';
+$available-x: 56px;
+$available-y: 46px;
+$available-offset-x: -56px;
+$available-offset-y: -46px;
+$available-width: 16px;
+$available-height: 13px;
+$available-total-width: 356px;
+$available-total-height: 330px;
+$available-image: 'sprite.png';
+$available: (56px, 46px, -56px, -46px, 16px, 13px, 356px, 330px, 'sprite.png', 'available', );
+$compare-black-name: 'compare-black';
+$compare-black-x: 40px;
+$compare-black-y: 34px;
+$compare-black-offset-x: -40px;
+$compare-black-offset-y: -34px;
+$compare-black-width: 16px;
+$compare-black-height: 12px;
+$compare-black-total-width: 356px;
+$compare-black-total-height: 330px;
+$compare-black-image: 'sprite.png';
+$compare-black: (40px, 34px, -40px, -34px, 16px, 12px, 356px, 330px, 'sprite.png', 'compare-black', );
+$compare-grey-name: 'compare-grey';
+$compare-grey-x: 25px;
+$compare-grey-y: 22px;
+$compare-grey-offset-x: -25px;
+$compare-grey-offset-y: -22px;
+$compare-grey-width: 15px;
+$compare-grey-height: 12px;
+$compare-grey-total-width: 356px;
+$compare-grey-total-height: 330px;
+$compare-grey-image: 'sprite.png';
+$compare-grey: (25px, 22px, -25px, -22px, 15px, 12px, 356px, 330px, 'sprite.png', 'compare-grey', );
+$compare-name: 'compare';
+$compare-x: 162px;
+$compare-y: 141px;
+$compare-offset-x: -162px;
+$compare-offset-y: -141px;
+$compare-width: 26px;
+$compare-height: 20px;
+$compare-total-width: 356px;
+$compare-total-height: 330px;
+$compare-image: 'sprite.png';
+$compare: (162px, 141px, -162px, -141px, 26px, 20px, 356px, 330px, 'sprite.png', 'compare', );
+$deliver-name: 'deliver';
+$deliver-x: 72px;
+$deliver-y: 59px;
+$deliver-offset-x: -72px;
+$deliver-offset-y: -59px;
+$deliver-width: 18px;
+$deliver-height: 13px;
+$deliver-total-width: 356px;
+$deliver-total-height: 330px;
+$deliver-image: 'sprite.png';
+$deliver: (72px, 59px, -72px, -59px, 18px, 13px, 356px, 330px, 'sprite.png', 'deliver', );
+$fav-black-name: 'fav-black';
+$fav-black-x: 0px;
+$fav-black-y: 0px;
+$fav-black-offset-x: 0px;
+$fav-black-offset-y: 0px;
+$fav-black-width: 12px;
+$fav-black-height: 10px;
+$fav-black-total-width: 356px;
+$fav-black-total-height: 330px;
+$fav-black-image: 'sprite.png';
+$fav-black: (0px, 0px, 0px, 0px, 12px, 10px, 356px, 330px, 'sprite.png', 'fav-black', );
+$fav-grey-name: 'fav-grey';
+$fav-grey-x: 12px;
+$fav-grey-y: 10px;
+$fav-grey-offset-x: -12px;
+$fav-grey-offset-y: -10px;
+$fav-grey-width: 13px;
+$fav-grey-height: 12px;
+$fav-grey-total-width: 356px;
+$fav-grey-total-height: 330px;
+$fav-grey-image: 'sprite.png';
+$fav-grey: (12px, 10px, -12px, -10px, 13px, 12px, 356px, 330px, 'sprite.png', 'fav-grey', );
+$fav-name: 'fav';
+$fav-x: 138px;
+$fav-y: 120px;
+$fav-offset-x: -138px;
+$fav-offset-y: -120px;
+$fav-width: 24px;
+$fav-height: 21px;
+$fav-total-width: 356px;
+$fav-total-height: 330px;
+$fav-image: 'sprite.png';
+$fav: (138px, 120px, -138px, -120px, 24px, 21px, 356px, 330px, 'sprite.png', 'fav', );
+$insta-name: 'insta';
+$insta-x: 188px;
+$insta-y: 161px;
+$insta-offset-x: -188px;
+$insta-offset-y: -161px;
+$insta-width: 24px;
+$insta-height: 24px;
+$insta-total-width: 356px;
+$insta-total-height: 330px;
+$insta-image: 'sprite.png';
+$insta: (188px, 161px, -188px, -161px, 24px, 24px, 356px, 330px, 'sprite.png', 'insta', );
+$instock-name: 'instock';
+$instock-x: 90px;
+$instock-y: 72px;
+$instock-offset-x: -90px;
+$instock-offset-y: -72px;
+$instock-width: 16px;
+$instock-height: 16px;
+$instock-total-width: 356px;
+$instock-total-height: 330px;
+$instock-image: 'sprite.png';
+$instock: (90px, 72px, -90px, -72px, 16px, 16px, 356px, 330px, 'sprite.png', 'instock', );
+$no-available-name: 'no-available';
+$no-available-x: 106px;
+$no-available-y: 88px;
+$no-available-offset-x: -106px;
+$no-available-offset-y: -88px;
+$no-available-width: 16px;
+$no-available-height: 16px;
+$no-available-total-width: 356px;
+$no-available-total-height: 330px;
+$no-available-image: 'sprite.png';
+$no-available: (106px, 88px, -106px, -88px, 16px, 16px, 356px, 330px, 'sprite.png', 'no-available', );
+$order-name: 'order';
+$order-x: 122px;
+$order-y: 104px;
+$order-offset-x: -122px;
+$order-offset-y: -104px;
+$order-width: 16px;
+$order-height: 16px;
+$order-total-width: 356px;
+$order-total-height: 330px;
+$order-image: 'sprite.png';
+$order: (122px, 104px, -122px, -104px, 16px, 16px, 356px, 330px, 'sprite.png', 'order', );
+$sales-name: 'sales';
+$sales-x: 332px;
+$sales-y: 305px;
+$sales-offset-x: -332px;
+$sales-offset-y: -305px;
+$sales-width: 24px;
+$sales-height: 25px;
+$sales-total-width: 356px;
+$sales-total-height: 330px;
+$sales-image: 'sprite.png';
+$sales: (332px, 305px, -332px, -305px, 24px, 25px, 356px, 330px, 'sprite.png', 'sales', );
+$tg-name: 'tg';
+$tg-x: 212px;
+$tg-y: 185px;
+$tg-offset-x: -212px;
+$tg-offset-y: -185px;
+$tg-width: 24px;
+$tg-height: 24px;
+$tg-total-width: 356px;
+$tg-total-height: 330px;
+$tg-image: 'sprite.png';
+$tg: (212px, 185px, -212px, -185px, 24px, 24px, 356px, 330px, 'sprite.png', 'tg', );
+$viber-name: 'viber';
+$viber-x: 236px;
+$viber-y: 209px;
+$viber-offset-x: -236px;
+$viber-offset-y: -209px;
+$viber-width: 24px;
+$viber-height: 24px;
+$viber-total-width: 356px;
+$viber-total-height: 330px;
+$viber-image: 'sprite.png';
+$viber: (236px, 209px, -236px, -209px, 24px, 24px, 356px, 330px, 'sprite.png', 'viber', );
+$vk-name: 'vk';
+$vk-x: 260px;
+$vk-y: 233px;
+$vk-offset-x: -260px;
+$vk-offset-y: -233px;
+$vk-width: 24px;
+$vk-height: 24px;
+$vk-total-width: 356px;
+$vk-total-height: 330px;
+$vk-image: 'sprite.png';
+$vk: (260px, 233px, -260px, -233px, 24px, 24px, 356px, 330px, 'sprite.png', 'vk', );
+$whatsapp-name: 'whatsapp';
+$whatsapp-x: 284px;
+$whatsapp-y: 257px;
+$whatsapp-offset-x: -284px;
+$whatsapp-offset-y: -257px;
+$whatsapp-width: 24px;
+$whatsapp-height: 24px;
+$whatsapp-total-width: 356px;
+$whatsapp-total-height: 330px;
+$whatsapp-image: 'sprite.png';
+$whatsapp: (284px, 257px, -284px, -257px, 24px, 24px, 356px, 330px, 'sprite.png', 'whatsapp', );
+$yt-name: 'yt';
+$yt-x: 308px;
+$yt-y: 281px;
+$yt-offset-x: -308px;
+$yt-offset-y: -281px;
+$yt-width: 24px;
+$yt-height: 24px;
+$yt-total-width: 356px;
+$yt-total-height: 330px;
+$yt-image: 'sprite.png';
+$yt: (308px, 281px, -308px, -281px, 24px, 24px, 356px, 330px, 'sprite.png', 'yt', );
+$spritesheet-width: 356px;
+$spritesheet-height: 330px;
+$spritesheet-image: 'sprite.png';
+$spritesheet-sprites: ($available, $compare-black, $compare-grey, $compare, $deliver, $fav-black, $fav-grey, $fav, $insta, $instock, $no-available, $order, $sales, $tg, $viber, $vk, $whatsapp, $yt, );
+$spritesheet: (356px, 330px, 'sprite.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  // @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .icon-#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+
+@include sprites($spritesheet-sprites);

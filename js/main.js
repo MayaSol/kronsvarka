@@ -77,7 +77,8 @@
             e.preventDefault();
             $.magnificPopup.close();
         });
-        $("ul.tabs").on("click", "li:not(.current)", function() { $(this).addClass("current").siblings().removeClass("current").parents("div.tabs-wrap").find("div.box").eq($(this).index()).fadeIn(100).addClass("box--visible").siblings("div.box").hide().removeClass("box--visible"); });
+        $("ul.tabs").on("click", "li:not(.current)",
+            function() { $(this).addClass("current").siblings().removeClass("current").parents("div.tabs-wrap").find("div.box").eq($(this).index()).fadeIn(100).addClass("box--visible").siblings("div.box").hide().removeClass("box--visible"); });
         $(".acc-title").on("click", function(e) {
             var $this = $(this);
             var $block = $this.parents(".acc-block");

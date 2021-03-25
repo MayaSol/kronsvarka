@@ -26,12 +26,17 @@ utils.css
 
 fonts/roboto-regular.woff
 fonts/roboto-regular.woff2
+fonts/PTC55F_W.woff
 
 Можно удалить
 logo-instagram.png
 logo-telegramm.png
 logo-instagramm.png
 logo-vk.png
+
+Добавить в img:
+sprite.png
+arrow-white.png
 
 
 1.Добавить обертку <div class="page-content"> для <header class="page-header"> и <div class="content wrap group">:
@@ -54,8 +59,7 @@ logo-vk.png
 <div class='sidebar-block sidebar-menu-wrapper' style=''>
 <div class="sidebar-block sidebar-info-wrapper">
 
-4. Убрать у footer класс group:
-<footer class="page-footer">
+
 
 Хедер:
 
@@ -69,3 +73,75 @@ logo-vk.png
 Сайдбар:
 1. Добавить класс open:
 <nav class="sidebar-menu open">
+
+
+catalog-type:
+1. Убрать group и rows в <div id="mse2_results" class="catalog group rows ">
+на странице products-type
+
+2.catalog-item:
+2.1 Убрать <a href="catalog/rezaki-propanovye" class="catalog-item__cat">Резаки пропановые</a>
+2.2 Добавить <div class="catalog-item__desc"></div> и обернуть в <div class="catalog-item__info"> вместе с названием:
+<div class="catalog-item__info">
+    <a href="product/rezak-propan-donmet-142-p-sotka" class="catalog-item__good">Резак пропановый "ДОНМЕТ" 142 П "СОТКА"</a>
+    <div class="catalog-item__desc">
+    </div>
+</div>
+2.3 Мзсенить класс на <div class="catalog-item__buy"> в блоке цены
+
+2.4 В catalog-item__mark надпись Популярное и Рекомендцем обернуть в <span>:
+<div class="catalog-item__mark">
+	<div class="img" style="background: url(/img/popular.png) 50% 0 no-repeat;"></div>
+	<span>Популярное</span>
+</div>
+
+2.5 Добавит класс good-mark
+<div class="catalog-item__mark good-mark">
+
+
+
+
+---------------------------------
+product page
+---------------------------------
+1. Добавить класс page--product в
+<div class="page page--inner">
+или в <div class="content wrap group">
+
+2. Добавить в sidebar-menu style="display: none":
+<nav class="sidebar-menu" style="display: none">
+
+3. Поменять
+<div class="good">
+    <div class="group">
+
+на
+
+<div class="good">
+    <div class="good-inner">
+
+
+ 4. В блок good добавить обертку <div class="good-inner">
+
+ 5.Убрать инлайн-стили:
+ <div class="slider-nav">
+
+ 6. Убрать инлайн-стили:
+ <div class="good-price__value">
+   <p class="info">
+
+7.Поменять блок Цена с НДС на  <div class="price-nds">..</div>
+
+8.Добавить id вкладке Характеристики:
+<div class="good-tabs tabs-wrap">
+...
+	<li id="good-data">
+
+9.Добавить вкладку Доставка
+
+
+Статус доставки - один из вариантов
+
+Условия доставки - два варианта 
+1. Cсылка «Условия доставки» 
+2. Текст «Бесплатная доставка по Санкт-Петербургу» и ниже ссылка «Другие условия доставки» 

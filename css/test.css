@@ -1,0 +1,19 @@
+.page-header {
+	background: none !important;
+}
+
+.bottom_header {
+	background: none !important;
+}
+
+.catalog-item {
+	background: none !important;
+}
+
+.catalog-item__img a {
+	outline: 1px solid red;
+}
+
+.catalog-item__img a img {
+	opacity: 0;
+}
